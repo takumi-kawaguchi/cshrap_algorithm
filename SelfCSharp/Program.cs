@@ -13,7 +13,8 @@ namespace SelfCSharp
 		static void Main(string[] args)
 		{
 			// here you use any functions you wanna try
-			
+
+			Warmup.Eratosthenes();
 			string stop = Console.ReadLine();
 		}
 	}
