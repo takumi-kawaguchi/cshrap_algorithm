@@ -14,7 +14,7 @@ namespace SelfCSharp
 		{
 			// here you use any functions you wanna try
 
-			Warmup.Eratosthenes();
+
 			string stop = Console.ReadLine();
 		}
 	}

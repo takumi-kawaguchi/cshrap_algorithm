@@ -147,5 +147,26 @@ namespace SelfCSharp
 		//		index++;
 		//	}
 		//}
+
+		static public void PrimeFactorization()
+		{
+			Console.WriteLine("素因数分解する整数を入力してください");
+			var n = int.Parse(Console.ReadLine());
+
+			var i = 2;
+			while (n >= i * i)
+			{
+				if (n % i == 0)
+				{
+					Console.Write("{0}*", i);
+					n /= i;
+				}
+				else
+				{
+					i++;
+				}
+			}
+			Console.Write(n);
+		}
 	}
 }
