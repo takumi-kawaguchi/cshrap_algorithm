@@ -46,5 +46,24 @@ namespace SelfCSharp
 		{
 			return ref data[0];
 		}
+
+		public void GetMaxMin(int x, int y, out int max, out int min)
+		{
+			if (x > y)
+			{
+				max = x;
+				min = y;
+			}
+			else
+			{
+				max = y;
+				min = x;
+			}
+		}
+
+		public (int max, int min) GetMaxMin(int x, int y)
+		{
+			return x >= y ? (x, y) : (y, x);
+		}
 	}
 }

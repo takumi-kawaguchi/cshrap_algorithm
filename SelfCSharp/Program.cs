@@ -14,7 +14,6 @@ namespace SelfCSharp
 		{
 			// here you use any functions you wanna try
 
-			Sort.Select();
 			string stop = Console.ReadLine();
 		}
 	}
