@@ -48,5 +48,46 @@ namespace SelfCSharp
 			}
 			Console.Write("\n");
 		}
+
+		static public void Bubble()
+		{
+			var list = new List<int> { };
+			bool answer;
+
+			Console.WriteLine("ソートする配列を設定してください");
+			do
+			{
+				var i = int.Parse(Console.ReadLine());
+				list.Add(i);
+				Console.WriteLine("まだ配列に数値を追加しますか？： y/n");
+				if (Console.ReadLine() == "y")
+				{
+					answer = true;
+				}
+				else
+				{
+					answer = false;
+				}
+			} while (answer);
+
+			for (var i = 0; i < list.Count - 1; i++)
+			{
+				for (var j = list.Count - 1; j > i; j--)
+				{
+					if (list[j] < list[j - 1])
+					{
+						var tmp = list[j];
+						list[j] = list[j - 1];
+						list[j - 1] = tmp;
+					}
+				}
+			}
+
+			foreach (var l in list)
+			{
+				Console.Write("{0} ", l);
+			}
+			Console.WriteLine();
+		}
 	}
 }
