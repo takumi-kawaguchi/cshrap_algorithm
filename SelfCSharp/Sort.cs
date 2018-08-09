@@ -10,23 +10,8 @@ namespace SelfCSharp
 	{
 		static public void Select()
 		{
-			var list = new List<int> { };
-			bool answer;
-
-			Console.WriteLine("ソートする配列を設定してください");
-			do
-			{
-				var i = int.Parse(Console.ReadLine());
-				list.Add(i);
-				Console.WriteLine("まだ配列に数値を追加しますか？： y/n");
-				if (Console.ReadLine() == "y")
-				{
-					answer = true;
-				} else
-				{
-					answer = false;
-				}
-			} while (answer);
+			var sort = new Sort();
+			var list = sort.PrepareList();
 
 			for (var i = 0; i < list.Count - 1; i++)
 			{
@@ -44,31 +29,15 @@ namespace SelfCSharp
 			}
 			foreach (var l in list)
 			{
-				Console.Write("{0}, ", l);
+				Console.Write("{0} ", l);
 			}
-			Console.Write("\n");
+			Console.WriteLine();
 		}
 
 		static public void Bubble()
 		{
-			var list = new List<int> { };
-			bool answer;
-
-			Console.WriteLine("ソートする配列を設定してください");
-			do
-			{
-				var i = int.Parse(Console.ReadLine());
-				list.Add(i);
-				Console.WriteLine("まだ配列に数値を追加しますか？： y/n");
-				if (Console.ReadLine() == "y")
-				{
-					answer = true;
-				}
-				else
-				{
-					answer = false;
-				}
-			} while (answer);
+			var sort = new Sort();
+			var list = sort.PrepareList();
 
 			for (var i = 0; i < list.Count - 1; i++)
 			{
@@ -92,24 +61,8 @@ namespace SelfCSharp
 
 		static public void Shaker()
 		{
-			var list = new List<int> { };
-			bool answer;
-
-			Console.WriteLine("ソートする配列を設定してください");
-			do
-			{
-				var i = int.Parse(Console.ReadLine());
-				list.Add(i);
-				Console.WriteLine("まだ配列に数値を追加しますか？： y/n");
-				if (Console.ReadLine() == "y")
-				{
-					answer = true;
-				}
-				else
-				{
-					answer = false;
-				}
-			} while (answer);
+			var sort = new Sort();
+			var list = sort.PrepareList();
 
 			var left = 0;
 			var right = list.Count - 1;
@@ -147,6 +100,30 @@ namespace SelfCSharp
 				Console.Write("{0} ", l);
 			}
 			Console.WriteLine();
+		}
+
+		private List<int> PrepareList()
+		{
+			var list = new List<int> { };
+			bool answer;
+
+			Console.WriteLine("ソートする配列を設定してください");
+			do
+			{
+				var i = int.Parse(Console.ReadLine());
+				list.Add(i);
+				Console.WriteLine("まだ配列に数値を追加しますか？： y/n");
+				if (Console.ReadLine() == "y")
+				{
+					answer = true;
+				}
+				else
+				{
+					answer = false;
+				}
+			} while (answer);
+
+			return list;
 		}
 	}
 }
