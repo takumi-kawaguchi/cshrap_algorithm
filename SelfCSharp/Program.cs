@@ -14,7 +14,7 @@ namespace SelfCSharp
 		{
 			// here you use any functions you wanna try
 
-			Sort.Bubble();
+			Sort.Shaker();
 			string stop = Console.ReadLine();
 		}
 	}

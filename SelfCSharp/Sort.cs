@@ -89,5 +89,64 @@ namespace SelfCSharp
 			}
 			Console.WriteLine();
 		}
+
+		static public void Shaker()
+		{
+			var list = new List<int> { };
+			bool answer;
+
+			Console.WriteLine("ソートする配列を設定してください");
+			do
+			{
+				var i = int.Parse(Console.ReadLine());
+				list.Add(i);
+				Console.WriteLine("まだ配列に数値を追加しますか？： y/n");
+				if (Console.ReadLine() == "y")
+				{
+					answer = true;
+				}
+				else
+				{
+					answer = false;
+				}
+			} while (answer);
+
+			var left = 0;
+			var right = list.Count - 1;
+			int shift = 0;
+			while (left < right)
+			{
+				for (var i = left; i < right; i++)
+				{
+					if (list[i] > list[i + 1])
+					{
+						var tmp = list[i];
+						list[i] = list[i + 1];
+						list[i + 1] = tmp;
+						shift = i;
+					}
+				}
+
+				right = shift;
+				for (var i = right; i > left; i--)
+				{
+					if (list[i] < list[i - 1])
+					{
+						var tmp = list[i];
+						list[i] = list[i - 1];
+						list[i - 1] = tmp;
+						shift = i;
+					}
+				}
+
+				left = shift;
+			}
+
+			foreach (var l in list)
+			{
+				Console.Write("{0} ", l);
+			}
+			Console.WriteLine();
+		}
 	}
 }
