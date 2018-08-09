@@ -102,6 +102,35 @@ namespace SelfCSharp
 			Console.WriteLine();
 		}
 
+		static public void Shell()
+		{
+			var sort = new Sort();
+			var list = sort.PrepareList();
+
+			for (var i = 1; i < list.Count; i++)
+			{
+				for (var j = i - 1; j >= 0; j--)
+				{
+					if (list[j] > list[j + 1])
+					{
+						var tmp = list[j];
+						list[j] = list[j + 1];
+						list[j + 1] = tmp;
+					}
+					else
+					{
+						break;
+					}
+				}
+			}
+
+			foreach (var l in list)
+			{
+				Console.Write("{0} ", l);
+			}
+			Console.WriteLine();
+		}
+
 		private List<int> PrepareList()
 		{
 			var list = new List<int> { };
