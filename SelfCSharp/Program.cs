@@ -13,7 +13,8 @@ namespace SelfCSharp
 		static void Main(string[] args)
 		{
 			// here you use any functions you wanna try
-			Sort.Shell();
+			Search.Linear();
+
 			string stop = Console.ReadLine();
 		}
 	}

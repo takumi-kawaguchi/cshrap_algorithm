@@ -131,6 +131,41 @@ namespace SelfCSharp
 			Console.WriteLine();
 		}
 
+		static public void ImprovedShell()
+		{
+			var sort = new Sort();
+			var list = sort.PrepareList();
+
+			var gap = list.Count / 2;
+			while (gap > 0)
+			{
+				for (var k = 0; k < gap; k++)
+				{
+					for (var i = k + gap; i < list.Count; i = i + gap)
+					{
+						for (var j = i - gap; j >= k; j = j - gap)
+						{
+							if (list[j] > list[j + gap])
+							{
+								var tmp = list[j]; list[j] = list[j + gap]; list[j + gap] = tmp;
+							}
+							else
+							{
+								break;
+							}
+						}
+					}
+				}
+				gap = gap / 2;
+			}
+
+			foreach (var l in list)
+			{
+				Console.Write("{0} ", l);
+			}
+			Console.WriteLine();
+		}
+
 		private List<int> PrepareList()
 		{
 			var list = new List<int> { };
