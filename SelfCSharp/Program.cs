@@ -13,7 +13,11 @@ namespace SelfCSharp
 		static void Main(string[] args)
 		{
 			// here you use any functions you wanna try
-			Search.Linear();
+			var list = new PrimeList(100);
+			foreach (var value in list)
+			{
+				Console.WriteLine(value);
+			}
 
 			string stop = Console.ReadLine();
 		}

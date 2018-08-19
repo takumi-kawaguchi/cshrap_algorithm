@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IteratorBasic.cs" />
+    <Compile Include="IteratorPrime.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Search.cs" />
     <Compile Include="Sort.cs" />
