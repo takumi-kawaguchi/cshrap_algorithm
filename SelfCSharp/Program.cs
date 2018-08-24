@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SelfCSharp.Chap08.Polymo;
 
 namespace SelfCSharp
 {
@@ -13,16 +14,10 @@ namespace SelfCSharp
 		static void Main(string[] args)
 		{
 			// here you use any functions you wanna try
-			var array = new FreeArray(5);
-			array[0] = 1;
-			array[1] = 10;
-			array[2] = 15;
-			array[3] = 30;
-			array[4] = 60;
-
-			Console.WriteLine(array[2]);
-			Console.WriteLine(array[-10]);
-			Console.WriteLine(array[6]);
+			Figure t = new Triangle(10, 30);
+			Console.WriteLine(t.GetArea());
+			Figure s = new Square(10, 30);
+			Console.WriteLine(s.GetArea());
 
 			string stop = Console.ReadLine();
 		}
