@@ -14,9 +14,9 @@ namespace SelfCSharp
 		static void Main(string[] args)
 		{
 			// here you use any functions you wanna try
-			Figure t = new Triangle(10, 30);
+			Triangle t = new Triangle(10, 30);
 			Console.WriteLine(t.GetArea());
-			Figure s = new Square(10, 30);
+			Square s = new Square(10, 30);
 			Console.WriteLine(s.GetArea());
 
 			string stop = Console.ReadLine();

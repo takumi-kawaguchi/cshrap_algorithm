@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chap08\InterfaceBasic.cs" />
     <Compile Include="Chap08\Polymo\PolymophismBasic.cs" />
     <Compile Include="IndexerBasic.cs" />
     <Compile Include="IteratorBasic.cs" />

@@ -6,38 +6,35 @@ using System.Threading.Tasks;
 
 namespace SelfCSharp.Chap08.Polymo
 {
-	class Figure
+	class Triangle : IFigure
 	{
 		public double Width { get; set; }
 		public double Height { get; set; }
 
-		public Figure(double width, double height)
+		public Triangle(double width, double height)
 		{
 			this.Width = width;
 			this.Height = height;
 		}
 
-		public virtual double GetArea()
-		{
-			return 0.0;
-		}
-	}
-
-	class Triangle : Figure
-	{
-		public Triangle(double width, double height) : base(width, height) { }
-
-		public override double GetArea()
+		public double GetArea()
 		{
 			return this.Width * this.Height / 2;
 		}
 	}
 
-	class Square : Figure
+	class Square : IFigure
 	{
-		public Square(double width, double height) : base(width, height) { }
+		public double Width { get; set; }
+		public double Height { get; set; }
 
-		public override double GetArea()
+		public Square(double width, double height)
+		{
+			this.Width = width;
+			this.Height = height;
+		}
+
+		public double GetArea()
 		{
 			return this.Width * this.Height;
 		}
